@@ -1,0 +1,22 @@
+## Config
+
+
+## Tomcat
+server:
+  port: 8801
+
+
+## spring
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: none
+  datasource:
+    url: jdbc:mysql://192.168.8.176:3306/demo
+    username: root
+    password: Hkkj@123
+
+
+## Swagger
+swagger:
+  enable: true
