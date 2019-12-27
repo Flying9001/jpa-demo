@@ -11,10 +11,13 @@ spring:
   jpa:
     hibernate:
       ddl-auto: none
+    show-sql: true
   datasource:
-    url: jdbc:mysql://192.168.8.176:3306/demo
+    url: "jdbc:mysql://192.168.8.176:3306/demo?useUnicode=true&characterEncoding=utf8&useJDBCCompliantTimezoneShift=true\
+      &useLegacyDatetimeCode=false&serverTimezone=GMT%2B8&useSSL=true&allowMultiQueries=true&autoReconnect=true"
     username: root
     password: Hkkj@123
+    driver-class-name: com.mysql.cj.jdbc.Driver
 
 
 ## Swagger

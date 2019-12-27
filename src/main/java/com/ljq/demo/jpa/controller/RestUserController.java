@@ -1,6 +1,8 @@
 package com.ljq.demo.jpa.controller;
 
 import com.ljq.demo.jpa.common.api.ApiResult;
+import com.ljq.demo.jpa.common.page.PageUtil;
+import com.ljq.demo.jpa.model.entity.RestUserEntity;
 import com.ljq.demo.jpa.model.param.*;
 import com.ljq.demo.jpa.service.RestUserService;
 import io.swagger.annotations.Api;
@@ -35,31 +37,31 @@ public class RestUserController {
     /**
      * 保存(单条)
      *
-     * @param restUserSaveVO
+     * @param restUserSaveParam
      * @return
      */
-    @RequestMapping(value = "", method = RequestMethod.POST, produces = {"application/json"})
+    @RequestMapping(value = "/save", method = RequestMethod.POST, produces = {"application/json"})
     @ApiOperation(value = "REST示例-用户表保存(单条)",  notes = "REST示例-用户表保存(单条)")
     @ResponseBody
-    public ResponseEntity<?> save(@RequestBody RestUserSaveVO restUserSaveVO) throws Exception{
-        ApiResult apiResult = restUserService.save(restUserSaveVO);
+    public ResponseEntity<ApiResult<Long>> save(@RequestBody RestUserSaveParam restUserSaveParam) throws Exception{
+        ApiResult apiResult = restUserService.save(restUserSaveParam);
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
-        return new ResponseEntity<>(apiResult, headers, HttpStatus.CREATED);
+        return new ResponseEntity<>(apiResult, headers, HttpStatus.OK);
     }
 
     /**
      * 查询详情(单条)
      *
-     * @param restUserFindByIdVO
+     * @param restUserFindByIdParam
      * @return
      */
-    @RequestMapping(value = "", method = RequestMethod.GET, produces = {"application/json"})
+    @RequestMapping(value = "/info", method = RequestMethod.POST, produces = {"application/json"})
     @ApiOperation(value = "REST示例-用户表查询详情(单条)",  notes = "REST示例-用户表查询详情(单条)")
     @ResponseBody
-    public ResponseEntity<?> info(RestUserFindByIdVO restUserFindByIdVO) throws Exception {
-        ApiResult apiResult = restUserService.findById(restUserFindByIdVO);
+    public ResponseEntity<ApiResult<RestUserEntity>> info(@RequestBody RestUserFindByIdParam restUserFindByIdParam) throws Exception {
+        ApiResult apiResult = restUserService.findById(restUserFindByIdParam);
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
@@ -69,14 +71,14 @@ public class RestUserController {
     /**
      * 查询列表
      *
-     * @param restUserFindAllVO
+     * @param restUserFindAllParam
      * @return
      */
-    @RequestMapping(value = "/list", method = RequestMethod.GET, produces = {"application/json"})
+    @RequestMapping(value = "/list", method = RequestMethod.POST, produces = {"application/json"})
     @ApiOperation(value = "REST示例-用户表查询列表",  notes = "REST示例-用户表查询列表")
     @ResponseBody
-    public ResponseEntity<?> list(RestUserFindAllVO restUserFindAllVO) throws Exception {
-        ApiResult apiResult = restUserService.findAll(restUserFindAllVO);
+    public ResponseEntity<ApiResult<PageUtil<RestUserEntity>>> list(@RequestBody RestUserFindAllParam restUserFindAllParam) throws Exception {
+        ApiResult apiResult = restUserService.findAll(restUserFindAllParam);
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
@@ -86,35 +88,35 @@ public class RestUserController {
     /**
      * 修改(单条)
      *
-     * @param restUserUpdateVO
+     * @param restUserUpdateParam
      * @return
      */
-    @RequestMapping(value = "", method = RequestMethod.PUT, produces = {"application/json"})
+    @RequestMapping(value = "/update", method = RequestMethod.POST, produces = {"application/json"})
     @ApiOperation(value = "REST示例-用户表修改(单条)",  notes = "REST示例-用户表修改(单条)")
     @ResponseBody
-    public ResponseEntity<?> update(@RequestBody RestUserUpdateVO restUserUpdateVO) throws Exception {
-        ApiResult apiResult = restUserService.update(restUserUpdateVO);
+    public ResponseEntity<?> update(@RequestBody RestUserUpdateParam restUserUpdateParam) throws Exception {
+        ApiResult apiResult = restUserService.update(restUserUpdateParam);
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
-        return new ResponseEntity<>(apiResult, headers, HttpStatus.CREATED);
+        return new ResponseEntity<>(apiResult, headers, HttpStatus.OK);
     }
 
     /**
      * 删除(单条)
      *
-     * @param restUserDeleteVO
+     * @param restUserDeleteParam
      * @return
      */
-    @RequestMapping(value = "", method = RequestMethod.DELETE, produces = {"application/json"})
+    @RequestMapping(value = "/delete", method = RequestMethod.POST, produces = {"application/json"})
     @ApiOperation(value = "REST示例-用户表删除(单条)",  notes = "REST示例-用户表删除(单条)")
     @ResponseBody
-    public ResponseEntity<?> delete(RestUserDeleteVO restUserDeleteVO) throws Exception {
-        ApiResult apiResult = restUserService.delete(restUserDeleteVO);
+    public ResponseEntity<?> delete(@RequestBody RestUserDeleteParam restUserDeleteParam) throws Exception {
+        ApiResult apiResult = restUserService.delete(restUserDeleteParam);
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
-        return new ResponseEntity<>(apiResult, headers, HttpStatus.NO_CONTENT);
+        return new ResponseEntity<>(apiResult, headers, HttpStatus.OK);
     }
 
 

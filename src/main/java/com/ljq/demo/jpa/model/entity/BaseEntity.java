@@ -3,6 +3,7 @@ package com.ljq.demo.jpa.model.entity;
 import lombok.Data;
 
 import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -12,6 +13,7 @@ import java.util.Date;
  * @Date: 2019/12/19
  */
 @Data
+@MappedSuperclass
 public class BaseEntity implements Serializable {
 
     private static final long serialVersionUID = -5193151091225256447L;

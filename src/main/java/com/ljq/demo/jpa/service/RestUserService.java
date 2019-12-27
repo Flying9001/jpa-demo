@@ -14,47 +14,47 @@ public interface RestUserService {
 	/**
      * 保存(单条)
      *
-     * @param restUserSaveVO
+     * @param restUserSaveParam
      * @return
      * @throws Exception
      */
-	ApiResult save(RestUserSaveVO restUserSaveVO) throws Exception;
+	ApiResult save(RestUserSaveParam restUserSaveParam) throws Exception;
 
 	/**
      * 查询详情(单条)
      *
-     * @param restUserFindByIdVO
+     * @param restUserFindByIdParam
      * @return
      * @throws Exception
      */
-	ApiResult findById(RestUserFindByIdVO restUserFindByIdVO) throws Exception;
+	ApiResult findById(RestUserFindByIdParam restUserFindByIdParam) throws Exception;
 
 	/**
      * 更新(单条)
      *
-     * @param restUserUpdateVO
+     * @param restUserUpdateParam
      * @return
      * @throws Exception
      */
-	ApiResult update(RestUserUpdateVO restUserUpdateVO) throws Exception;
+	ApiResult update(RestUserUpdateParam restUserUpdateParam) throws Exception;
 
 	/**
      * 查询列表
      *
-     * @param restUserFindAllVO
+     * @param restUserFindAllParam
      * @return
      * @throws Exception
      */
-	ApiResult findAll(RestUserFindAllVO restUserFindAllVO) throws Exception;
+	ApiResult findAll(RestUserFindAllParam restUserFindAllParam) throws Exception;
 
 	/**
      * 删除(单条)
      *
-     * @param restUserDeleteVO
+     * @param restUserDeleteParam
      * @return
      * @throws Exception
      */
-	ApiResult delete(RestUserDeleteVO restUserDeleteVO) throws Exception;
+	ApiResult delete(RestUserDeleteParam restUserDeleteParam) throws Exception;
 
 
 }

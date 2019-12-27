@@ -38,6 +38,12 @@ public enum  ResponseCode {
     REQUEST_TIME_OUT(1012,"请求超时"),
     FILE_FORMAT_ERROR(1013,"文件格式错误"),
     NOT_DATA(1014,"未查询到数据"),
+    REQUEST_METHOD_ERROR(1015, "请求方式错误"),
+    MEDIA_TYPE_NOT_SUPPORT_ERROR(1016, "参数(文件)格式不支持"),
+    PARAM_BIND_ERROR(1017, "参数格式错误,数据绑定失败"),
+    NOT_FOUND_ERROR(1018, "请求资源(接口)不存在"),
+    MISS_REQUEST_PART_ERROR(1019, "缺少请求体(未上传文件)"),
+    MISS_REQUEST_PARAM_ERROR(1020, "缺少请求参数"),
 
     /**
      * 课程
