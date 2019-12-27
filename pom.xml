@@ -7,7 +7,8 @@
 	<artifactId>jpa-demo</artifactId>
 	<version>1.0.0</version>
 	<name>jpa-demo</name>
-	<description>Demo project for Spring Boot</description>
+	<packaging>jar</packaging>
+	<description>Demo project for Spring Data JPA</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -88,6 +89,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>jpa-demo</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
