@@ -29,3 +29,7 @@ http://127.0.0.1:8801/swagger-ui.html
 
 [1 Spring Boot 集成 Spring data JPA --- 2019-12-27](./doc/1.spring_boot_with_spring_data_jpa.md "./doc/1.spring_boot_with_spring_data_jpa.md")  
 
+[2 Spring Data JPA 基础的增删改查(CRUD)示例 --- 2019-12-28](./doc/2.spring_data_jpa_simple_crud_demo.md "./doc/2.spring_data_jpa_simple_crud_demo.md")  
+
+
+
