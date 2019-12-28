@@ -31,5 +31,9 @@ http://127.0.0.1:8801/swagger-ui.html
 
 [2 Spring Data JPA 基础的增删改查(CRUD)示例 --- 2019-12-28](./doc/2.spring_data_jpa_simple_crud_demo.md "./doc/2.spring_data_jpa_simple_crud_demo.md")  
 
+[3 Spring Data JPA 动态插入或动态更新部分字段 --- 2019-12-28](./doc/3.spring_data_jpa_dynamic_save_and_update.md "./doc/3.spring_data_jpa_dynamic_save_and_update.md")  
+
+
+
 
 
