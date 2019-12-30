@@ -111,8 +111,9 @@
     <logger name="io.swagger.models.parameters" level="error" />
     <logger name="org.apache.http" level="warn" />
     <logger name="com.zaxxer.hikari" level="warn" />
-    <!-- 输出 SQL 参数到控制台和文件-->
+    <!-- 控制 Hibernate SQL 不记录到日志文件-->
     <logger name="org.hibernate.SQL" additivity="false" level="DEBUG" />
+    <!-- 控制输出 SQL 参数到控制台 -->
     <logger name="org.hibernate.type.descriptor.sql.BasicBinder" additivity="false" level="TRACE">
         <appender-ref ref="STDOUT" />
     </logger>

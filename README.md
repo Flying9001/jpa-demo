@@ -35,6 +35,8 @@ http://127.0.0.1:8801/swagger-ui.html
 
 [4 Spring Data JPA 手动编写 SQL --- 2019-12-30](./doc/4.spring_data_jpa_writing_sql_manually.md "./doc/4.spring_data_jpa_writing_sql_manually.md")  
 
+[5 Spring Boot 配置 logback 在日志中显示 JPA 执行的 SQL 语句以及参数 --- 2019-12-30](./doc/5.spring_data_jpa_logback_sql.md "./doc/5.spring_data_jpa_logback_sql.md")  
+
 
 
 
