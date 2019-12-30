@@ -33,6 +33,10 @@ http://127.0.0.1:8801/swagger-ui.html
 
 [3 Spring Data JPA 动态插入或动态更新部分字段 --- 2019-12-28](./doc/3.spring_data_jpa_dynamic_save_and_update.md "./doc/3.spring_data_jpa_dynamic_save_and_update.md")  
 
+[4 Spring Data JPA 手动编写 SQL --- 2019-12-30](./doc/4.spring_data_jpa_writing_sql_manually.md "./doc/4.spring_data_jpa_writing_sql_manually.md")  
+
+
+
 
 
 

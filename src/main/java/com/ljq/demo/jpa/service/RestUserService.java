@@ -48,6 +48,15 @@ public interface RestUserService {
 	ApiResult findAll(RestUserFindAllParam restUserFindAllParam) throws Exception;
 
 	/**
+	 * 搜索用户
+	 *
+	 * @param searchParam
+	 * @return
+	 * @throws Exception
+	 */
+	ApiResult search(RestUserSearchParam searchParam) throws Exception;
+
+	/**
      * 删除(单条)
      *
      * @param restUserDeleteParam

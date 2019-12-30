@@ -86,6 +86,23 @@ public class RestUserController {
     }
 
     /**
+     * 搜索用户
+     *
+     * @param searchParam
+     * @return
+     */
+    @RequestMapping(value = "/search", method = RequestMethod.POST, produces = {"application/json"})
+    @ApiOperation(value = "REST示例-搜索用户",  notes = "REST示例-搜索用户")
+    @ResponseBody
+    public ResponseEntity<ApiResult<PageUtil<RestUserEntity>>> search(@RequestBody RestUserSearchParam searchParam) throws Exception {
+        ApiResult apiResult = restUserService.search(searchParam);
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        return new ResponseEntity<>(apiResult, headers, HttpStatus.OK);
+    }
+
+    /**
      * 修改(单条)
      *
      * @param restUserUpdateParam

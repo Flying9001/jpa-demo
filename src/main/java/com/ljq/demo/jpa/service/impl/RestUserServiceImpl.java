@@ -51,6 +51,11 @@ public class RestUserServiceImpl implements RestUserService {
 		RestUserEntity restUserParam = new RestUserEntity();
 		BeanUtil.copyProperties(restUserSaveParam,restUserParam, CopyOptions.create()
 				.setIgnoreNullValue(true).setIgnoreError(true));
+		// 校验-用户邮箱
+		long countUser = restUserRepository.countByEmailAndDelSign(restUserSaveParam.getEmail(), CommonConst.DEL_SIGN_NORMAL);
+		if (countUser > 0) {
+			throw new ParamsCheckException(ResponseCode.USER_EMAIL_REGISTERED);
+		}
 		// 保存
 		RestUserEntity restUserDB = restUserRepository.save(restUserParam);
 		if (Objects.isNull(restUserDB) || Objects.isNull(restUserDB.getId())) {
@@ -122,6 +127,32 @@ public class RestUserServiceImpl implements RestUserService {
 				queryUtil.getProperties());
 		Page<RestUserEntity> page = restUserRepository
 				.findAll(Example.of(restUserParam),pageable);
+		// 返回分页结果
+		PageUtil pageUtil = new PageUtil(page.getContent(),(int)page.getTotalElements(),
+				queryUtil.getPageLimit(),queryUtil.getCurrPage());
+
+		return ApiResult.success(pageUtil);
+	}
+
+	/**
+	 * 搜索用户
+	 *
+	 * @param searchParam
+	 * @return
+	 * @throws Exception
+	 */
+	@Override
+	public ApiResult search(RestUserSearchParam searchParam) throws Exception {
+		// 请求参数获取
+		RestUserEntity restUserParam = new RestUserEntity();
+		BeanUtil.copyProperties(searchParam, restUserParam, CopyOptions.create()
+				.setIgnoreError(true).setIgnoreNullValue(true));
+		Map<String, Object> map = BeanUtil.beanToMap(searchParam, false, true);
+		QueryUtil queryUtil = new QueryUtil(map);
+		Pageable pageable = PageRequest.of((queryUtil.getCurrPage() - 1), queryUtil.getPageLimit(),
+				Sort.Direction.fromString(queryUtil.getDirection()),
+				queryUtil.getProperties());
+		Page<RestUserEntity> page = restUserRepository.search(restUserParam,pageable);
 		// 返回分页结果
 		PageUtil pageUtil = new PageUtil(page.getContent(),(int)page.getTotalElements(),
 				queryUtil.getPageLimit(),queryUtil.getCurrPage());
